@@ -1,4 +1,4 @@
-require_relative('../db/sql_runner')
+require_relative('../database/sql_runner')
 
 class Artist
 

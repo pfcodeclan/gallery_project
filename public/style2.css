@@ -1,21 +1,25 @@
 body {
-  padding: 50px;
+  padding: 100px;
   font-family: 'Major Mono Display', monospace;
   color: #dbeef9;
   background-image: url("/deanna-j-565002-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: red;
 }
 
 a:hover {
-  color: darkred;
+  color: black;
 }
 
+
 #menu {
-  width: 220px;
+  width: 500px;
   display: flex;
   margin: 0 auto;
 }
@@ -25,12 +29,14 @@ a:hover {
   flex-grow: 1;
 }
 
+
 #logo {
-  text-align: center;
+  text-align: justify;
 }
 
+
 #artist-wrapper {
-  margin-left: 300px;
+  margin-left: 500px;
 }
 .artist {
   border: 5px double;
