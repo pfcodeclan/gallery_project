@@ -2,6 +2,31 @@
   box-sizing: border-box;
 }
 
+.flexContainer {
+    display: flex;
+}
+.flexItem {
+    flex: 1;
+}
+.flexStart {
+    justify-content: flex-start;
+}
+.flexEnd {
+    justify-content: flex-end;
+}
+.blackBackground {
+    background: black;
+}
+.nav {
+    list-style: none;
+}
+.nav a {
+    text-decoration: none;
+    display: block;
+    padding: 0 1em;
+    color: white;
+}
+
 body {
   padding: 100px;
   font-family: 'Major Mono Display', monospace;
@@ -12,6 +37,7 @@ body {
   background-repeat: no-repeat;
   background-position: top;
   display: flex;
+  justify-content: space-around;
   min-height: 100vh;
   flex-direction: column;
   margin: 0;
