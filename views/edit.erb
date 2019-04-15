@@ -14,9 +14,9 @@
       <select name="exhibit_id" id="exhibit_select" selected="<%= @artist.exhibit_id  %>">
         <% @exhibits.each do |exhibit| %>
           <% if exhibit.id == @artist.exhibit_id %>
-            <option value=<%= exhibit.id %> selected><%= exhibit.name.capitalize %></option>
+            <option value=<%= exhibit.id %> selected><%= exhibit.name %></option>
           <% else %>
-            <option value=<%= exhibit.id %>><%= exhibit.name.capitalize %></option>
+            <option value=<%= exhibit.id %>><%= exhibit.name %></option>
           <% end %>
         <% end %>
       </select>

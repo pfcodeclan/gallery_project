@@ -2,8 +2,8 @@ require_relative('../database/sql_runner')
 
 class Exhibit
 
+  attr_accessor :id, :name
   attr_reader :id, :name
-  attr_accessor :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -27,7 +27,7 @@ class Exhibit
   end
 
   def self.find(id)
-    sql = "SELECT * FROPM exhibits WHERE id = $1"
+    sql = "SELECT * FROM exhibits WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values).first
     exhibit = Exhibit.new(result)

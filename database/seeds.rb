@@ -2,9 +2,9 @@ require_relative('../models/artist')
 require_relative('../models/exhibit')
 
 
-exhibit1 = Exhibit.new({'name' => 'exhibit1'})
-exhibit2 = Exhibit.new({'name' => 'exhibit2'})
-exhibit3 = Exhibit.new({'name' => 'exhibit3'})
+exhibit1 = Exhibit.new({'name' => 'Cubism'})
+exhibit2 = Exhibit.new({'name' => 'POP'})
+exhibit3 = Exhibit.new({'name' => 'Expressionists'})
 
 exhibit1.save
 exhibit2.save

@@ -2,10 +2,11 @@
 
 <div id="artist-wrapper">
   <% @artists.each do |artist| %>
+
   <div class="artist">
     <h3><a href="/artists/<%= artist.id %>"><%= artist.format_name %></a></h3>
     <p>Price: <%= artist.price %></p>
-    <p>Exhibit: <%= artist.exhibit.name.capitalize %></p>
+    <p>Exhibit: <%= artist.exhibit.name %></p>
   </div>
   <% end %>
 
