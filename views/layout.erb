@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Gallery</title>
-  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
-  <link rel="stylesheet" href="style2.css">
-</head>
+  <head>
+    <title>Gallery</title>
+        <header>Gallery</header>
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+  </head>
 
+  <body>
+    <div id="main">
+    <nav id="menu">
+      <li class="menu-item"><a href='/artists/new'>Add Artist</a></li>
+      <li class="menu-item"><a href='/artists'>Artists Exhibitions</a></li>
+    </nav>
 
-<body>
-  <nav id="menu">
-
-    <li class="menu-item"><a href='/artists/new'>Add Artist</a></li>
-    <li class="menu-item"><a href='/artists'>Artists Exhibitions</a></li>
-
-  </nav>
-
-  <h1 id="logo">Gallery</h1>
-  <%= yield %>
-
-</body>
-
+    <!-- <h1 id="logo">Gallery</h1> -->
+    <%= yield %>
+  </div>
+    <footer>
+      <p>&copy Copyright 2019: Paul Flannery | Contact information: <a href="mailto:someone@example.com">paul@email.com</a>.</p>
+    </footer>
+  </body>
 </html>

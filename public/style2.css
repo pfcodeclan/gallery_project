@@ -1,11 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   padding: 100px;
   font-family: 'Major Mono Display', monospace;
   color: #dbeef9;
   background-image: url("/deanna-j-565002-unsplash.jpg");
+  opacity: 0.7;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
 }
 
 a {
@@ -24,9 +33,14 @@ a:hover {
   margin: 0 auto;
 }
 
+
 .menu-item {
-  display: inline-block;
+  display: list-item;
   flex-grow: 1;
+  background-color: black;
+
+  /* flex: 1;
+  order: 1; */
 }
 
 
@@ -36,7 +50,9 @@ a:hover {
 
 
 #artist-wrapper {
-  margin-left: 500px;
+  margin-left: 100px;
+  display: flex;
+  flex-flow: row wrap;
 }
 .artist {
   border: 5px double;
@@ -44,6 +60,7 @@ a:hover {
   padding: 25px;
   width: 200px;
   display: inline-block;
+  background: #444;
 }
 
 .form-el {
@@ -61,3 +78,25 @@ a:hover {
   width: 160px;
   margin: 0 1em 0 0;
 }
+
+header, footer {
+  background: black;
+  height: 5vh;
+}
+header, footer, article, nav, aside {
+  padding: 1em;
+}
+
+
+  /* #main > nav,
+  #main > aside {
+    flex: 0 0 20vw;
+  }
+  #main > nav {
+    background: #D7E8D4;
+    order: 3;
+  }
+  #main > aside {
+    background: beige;
+    order: 2;
+  } */
