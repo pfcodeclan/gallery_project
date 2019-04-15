@@ -8,8 +8,8 @@ class Artist
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @exhibit_id = options['exhibit_id'].to_i
-    @price = ['price'].to_i
+    @exhibit_id = options['exhibit_id']
+    @price = options['price']
   end
 
   def save()
@@ -26,8 +26,8 @@ class Artist
     RETURNING id"
     values = [@name, @exhibit_id, @price]
     result = SqlRunner.run(sql, values)
-    id = result.first['id']
-    @id = id
+    @id = result.first['id'].to_i
+    # @id = id
   end
 
   def exhibit()

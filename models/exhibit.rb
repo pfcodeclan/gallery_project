@@ -3,6 +3,7 @@ require_relative('../database/sql_runner')
 class Exhibit
 
   attr_reader :id, :name
+  attr_accessor :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -21,8 +22,8 @@ class Exhibit
       RETURNING id"
       values = [@name]
       result = SqlRunner.run(sql, values)
-      id = result.first['id']
-      @id = id.to_i
+      @id = result.first['id'].to_i
+      # @id = id.to_i
   end
 
   def self.find(id)
