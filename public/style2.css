@@ -51,7 +51,6 @@ a:hover {
   color: black;
 }
 
-
 #menu {
   width: 200px;
   display: flex;
@@ -79,6 +78,7 @@ a:hover {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  /* background-color: red; */
 }
 .artist {
   display: flex;
