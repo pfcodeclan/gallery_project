@@ -32,7 +32,6 @@ body {
   font-family: 'Major Mono Display', monospace;
   color: #dbeef9;
   background-image: url("/deanna-j-565002-unsplash.jpg");
-  opacity: 0.7;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -93,11 +92,11 @@ a:hover {
 }
 
 .form-el {
-  margin: 10px 0;
+  margin: 100px 0;
 }
 
 .form-wrapper .form-el input[type="submit" i] {
-  margin-left: 180px;
+  margin-left: auto;
 }
 
 .form-wrapper .form-el label {

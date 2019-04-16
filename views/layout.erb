@@ -5,16 +5,16 @@
     <title>Gallery</title>
     <!-- <header>Gallery</header> -->
     <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="/style2.css">
   </head>
 
   <body>
     <nav class="flexContainer blackBackground">
       <ul class="nav flexItem flexStart">
-          <li><a href="/artists">CC Gallery</a></li>
+          <li><a href="/">CC Gallery</a></li>
       </ul>
       <ul class="nav flexContainer flexEnd">
-          <li><a href="/index">Home</a></li>
+          <!-- <li><a href="/">Home</a></li> -->
           <li><a href="/artists">Artists</a></li>
           <li><a href="/exhibits">Exhibitions</a></li>
           <!-- <li><a href="/about">About</a></li>
@@ -26,10 +26,12 @@
 
 <!-- ADD OT MANAGEMENT FUNCITONALITY -->
   <div id="main">
-    <!-- <nav id="menu">
+
+    <nav id="menu">
       <li class="menu-item"><a href='/artists/new'>Add Artist</a></li>
       <li class="menu-item"><a href='/artists'>Artists Exhibitions</a></li>
-    </nav> -->
+    </nav>
+
 
     <!-- <h1 id="logo">Gallery</h1> -->
     <%= yield %>

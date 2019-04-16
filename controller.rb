@@ -4,15 +4,22 @@ require_relative('models/artist')
 require_relative('models/exhibit')
 also_reload('./models/*')
 
-get '/artists' do
+get '/' do
   @artists = Artist.all
   erb(:index)
 end
 
-get '/artists/new' do
-  @exhibits = Exhibit.all
-  erb(:new)
+get '/artists' do
+  @artists = Artist.all
+  erb(:artists_list)
 end
+
+get '/artists_new' do
+  @artists = Artist.all
+  erb(:new_artist)
+end
+
+# TODO /artists route rendering artist_list.erb
 
 post '/artists' do
   Artist.new(params).save
@@ -40,4 +47,60 @@ post '/artists/:id/delete' do
   artist = Artist.find(params['id'])
   artist.delete
   redirect to '/artists'
+end
+
+
+# ----
+
+
+get '/exhibits' do
+  @exhibits = Exhibit.all
+  erb(:exhibits_list)
+  # erb(:index)
+end
+
+get '/exhibits/new' do
+  @artists = Artist.all
+  erb(:new)
+end
+
+post '/exhibits' do
+  Exhibit.new(params).save
+  redirect to '/exhibits'
+end
+
+get '/exhibits/:id' do
+  @exhibit = Exhibit.find(params['id'])
+  erb(:show)
+end
+
+get '/exhibits/:id/edit' do
+  @artists = Artist.all
+  @exhibit = Exhibit.find(params['id'])
+  erb(:edit)
+end
+
+post '/exhibits/:id' do
+  exhibit = Exhibit.new(params)
+  exhibit.update
+  redirect to "/exhibits/#{params['id']}"
+end
+
+post '/exhibits/:id/delete' do
+  exhibit = Exhibit.find(params['id'])
+  exhibit.delete
+  redirect to '/exhibits'
+end
+
+# TODO: about route rendering about.erb
+get '/about' do
+  erb(:about)
+end
+
+get '/contact' do
+  erb(:contact)
+end
+
+get '/manlogin' do
+  erb(:manlogin)
 end

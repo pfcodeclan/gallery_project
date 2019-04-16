@@ -3,11 +3,11 @@ require_relative('../database/sql_runner')
 class Exhibit
 
   attr_accessor :id, :name
-  attr_reader :id, :name
+  attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = ['name']
+    @name = options['name']
   end
 
   def save()
@@ -43,6 +43,10 @@ class Exhibit
 
   def self.map_items(exhibit_data)
     return exhibit_data.map{|exhibit| Exhibit.new(exhibit)}
+  end
+
+  def format_name_exhibit
+    return "#{@name.capitalize}"
   end
 
 end
