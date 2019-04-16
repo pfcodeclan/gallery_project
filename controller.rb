@@ -11,6 +11,7 @@ get '/' do
   erb(:index)
 end
 
+
 get '/artists' do
   @artists = Artist.all
   erb(:artists_list)
@@ -24,7 +25,7 @@ end
 
 post '/artists' do
   Artist.new(params).save
-  redirect to '/artists'
+  erb(:artists_list)
 end
 
 get '/artists/:id' do
@@ -67,7 +68,7 @@ end
 
 post '/exhibits' do
   Exhibit.new(params).save
-  redirect to '/exhibits'
+  redirect to '/exhibits_list'
 end
 
 get '/exhibits/:id' do
@@ -90,7 +91,7 @@ end
 post '/exhibits/:id/delete' do
   exhibit = Exhibit.find(params['id'])
   exhibit.delete
-  redirect to '/exhibits'
+  redirect to '/exhibits_list'
 end
 
 # TODO: about route rendering about.erb
@@ -104,4 +105,8 @@ end
 
 get '/manlogin' do
   erb(:manlogin)
+end
+
+get '/artists_new' do
+  erb(:new_artist)
 end

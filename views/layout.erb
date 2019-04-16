@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html>
-
-  <head>
-    <title>Gallery</title>
-    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
-    <link rel="stylesheet" href="/style2.css">
-  </head>
-
-
-  <body>
-
-      <nav class="flexContainer blackBackground">
-        <ul class="nav flexItem flexStart">
-            <li><a href="/">CC Gallery</a></li>
-        </ul>
-        <ul class="nav flexContainer flexEnd">
-            <li><a href="/artists">Artists</a></li>
-            <li><a href="/exhibits">Exhibitions</a></li>
-            <<li><input type="search" placeholder="search"></li>
-        </ul>
-      </nav>
+<head>
+  <title>Gallery</title>
+  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+  <link rel="stylesheet" href="/style2.css">
+</head>
+<body>
+  <nav class="flexContainer blackBackground">
+    <ul class="nav flexItem flexStart">
+    <li><a href="/">CC Gallery</a></li>
+    </ul>
+    <ul class="nav flexContainer flexEnd">
+    <li><a href="/artists">Artists</a></li>
+    <li><a href="/artists_new">Add Artists</a></li>
+    <li><a href="/exhibits">Exhibitions</a></li>
+    <<li><input type="search" placeholder="search"></li>
+    </ul>
+  </nav>
 
   <div id="main">
     <%= yield %>
   </div>
 
-      <nav class="flexContainer blackBackground">
-        <ul class="nav flexItem flexStart">
-            <li>&copy Copyright 2019: Paul Flannery</li>
-        </ul>
-        <ul class="nav flexContainer flexEnd">
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/manlogin">Login</a></li>
-        </ul>
-      </nav>
-
-  </body>
-
+  <nav class="flexContainer blackBackground">
+    <ul class="nav flexItem flexStart">
+    <li>&copy Copyright 2019: Paul Flannery</li>
+    </ul>
+    <ul class="nav flexContainer flexEnd">
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+</body>
 </html>

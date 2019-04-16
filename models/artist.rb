@@ -1,85 +1,64 @@
 require_relative('../database/sql_runner')
+require_relative('exhibit')
 
 class Artist
-
-  attr_accessor :name, :exhibit_id, :price
-  attr_reader :id
+  attr_accessor(:name, :category, :id)
+  attr_reader(:name, :category, :id)
 
   def initialize(options)
-    @id = options['id'].to_i if options['id']
+    @id = options['artist_id'].to_i if options['artist_id']
     @name = options['name']
-    @exhibit_id = options['exhibit_id']
-    @price = options['price']
+    @category = options['category']
+  end
+
+  def self.all()
+    sql = "SELECT * FROM artists"
+    results = SqlRunner.run(sql)
+    return results.map {|artist|Artist.new(artist)}
   end
 
   def save()
     sql = "INSERT INTO artists
     (
       name,
-      exhibit_id,
-      price
+      category
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2
     )
     RETURNING id"
-    values = [@name, @exhibit_id, @price]
-    result = SqlRunner.run(sql, values)
-    @id = result.first['id'].to_i
-    # @id = id
+    values = [@name, @category]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['artist_id'].to_i
   end
 
-  def exhibit()
-    exhibit = Exhibit.find(@exhibit_id)
-    return exhibit
-  end
-
-  def update()
-    sql = "UPDATE artists
-    SET
-    (
-      name,
-      exhibit_id,
-      price
-      ) =
-      (
-        $1, $2, $3
-        )
-        WHERE id = $4"
-        values = [@name, @exhibit_id, @price]
-        SqlRunner.run(sql, values)
+  def self.find(id)
+    sql = "SELECT * FROM artists
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Artist.new(results.first)
   end
 
   def delete()
-    sql = "DELETE FROM artists
-    WHERE id = $1"
+    sql = "DELETE FROM artists WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
-  def self.all()
-    sql = "SELECT * FROM artists"
-    artist_data = SqlRunner.run(sql)
-    artists = map_items(artist_data)
-    return artists
+  def self.delete_all
+    sql = "DELETE FROM artists"
+    SqlRunner.run( sql )
   end
 
-  def self.map_items(artist_data)
-    return artist_data.map{|artist| Artist.new(artist)}
+  def format_name
+    return "#{@name.capitalize}"
   end
 
-    def self.find(id)
-      sql = "SELECT * FROM artists
-      WHERE id = $1"
-      values = [id]
-      result = SqlRunner.run(sql, values).first
-      artist = Artist.new(result)
-      return artist
-    end
-
-    def format_name
-      return "#{@name.capitalize}"
-    end
+  # def exhibit()
+  #   exhibit = Exhibit.find(@exhibit_id)
+  #   return exhibit
+  # end
 
 end

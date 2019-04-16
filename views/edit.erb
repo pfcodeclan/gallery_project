@@ -1,10 +1,7 @@
-<h2>Edit <%= @artist.format_name %></h2>
+<h2>Edit >>> <%= @artist.format_name %></h2>
 
 <form method="POST" action="/artists/<%= @artist.id %>">
-
-
   <div class="form-wrapper">
-
     <div class="form-el">
       <label for="name">Name:</label>
       <input type="text" name="name" id="name" value="<%= @artist.name %>"/>
@@ -14,13 +11,13 @@
     <div class="form-el">
       <label for="exhibit_select">Goto Exhibit:</label>
       <select name="exhibit_id" id="exhibit_select" selected="<%= @artist.exhibit_id  %>">
-        <% @exhibits.each do |exhibit| %>
-          <% if exhibit.id == @artist.exhibit_id %>
-            <option value=<%= exhibit.id %> selected><%= exhibit.name %></option>
-          <% else %>
-            <option value=<%= exhibit.id %>><%= exhibit.name %></option>
-          <% end %>
-        <% end %>
+      <% @exhibits.each do |exhibit| %>
+      <% if exhibit.id == @artist.exhibit_id %>
+      <option value=<%= exhibit.id %> selected><%= exhibit.name %></option>
+      <% else %>
+      <option value=<%= exhibit.id %>><%= exhibit.name %></option>
+      <% end %>
+      <% end %>
       </select>
     </div>
 

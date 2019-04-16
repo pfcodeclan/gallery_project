@@ -2,37 +2,58 @@ require_relative('../models/artist')
 require_relative('../models/exhibit')
 
 
-exhibit1 = Exhibit.new({
-                    'name' => 'Cubism'})
-exhibit1.save
-
-exhibit2 = Exhibit.new({
-                    'name' => 'POP'})
-exhibit2.save
-
-exhibit3 = Exhibit.new({
-                    'name' => 'Expressionists'})
-exhibit3.save
-
-
-a1 = Artist.new({
+# instantiate a new object of Artist class
+artist1 = Artist.new({
   'name' => 'Picasso',
-  'exhibit_id' => exhibit1.id,
-  'price' => '10' })
-a2 = Artist.new({
-  'name' => 'Warhol',
-  'exhibit_id' => exhibit2.id,
-  'price' => '10' })
-a3 = Artist.new({
-  'name' => 'Klimpt',
-  'exhibit_id' => exhibit3.id,
-  'price' => '10' })
-a4 = Artist.new({
-  'name' => 'Banksy',
-  'exhibit_id' => exhibit2.id,
-  'price' => '10' })
+  'category' => 'Cubism'
+  })
+artist1.save()
 
-a1.save
-a2.save
-a3.save
-a4.save
+# instantiate a new object of Artist class
+artist2 = Artist.new({
+  'name' => 'Banksy',
+  'category' => 'Street'
+  })
+artist2.save()
+
+# instantiate a new object of Artist class
+artist3 = Artist.new({
+  'name' => 'Klimpt',
+  'category' => 'Expressionism'
+  })
+artist3.save()
+
+# instantiate a new object of Artist class
+artist4 = Artist.new({
+  'name' => 'Dali',
+  'category' => 'Surrealism'
+  })
+artist4.save()
+
+# instantiate a new object of Exhibit class
+exhibit1 = Exhibit.new({
+  'name' => 'Early Picasso',
+  'category' => 'Cubism'
+  })
+exhibit1.save()
+
+# instantiate a new object of Exhibit class
+exhibit2 = Exhibit.new({
+  'name' => 'Early Banksy',
+  'category' => 'Street'
+  })
+exhibit2.save()
+
+# instantiate a new object of Exhibit class
+exhibit3 = Exhibit.new({
+  'name' => 'Klimpt in Vienna',
+  'category' => 'Expressionism'
+  })
+exhibit3.save()
+
+# instantiate a new object of Exhibit class
+exhibit4 = Exhibit.new({
+  'name' => 'Life of Dali',
+  'category' => 'Surrealism'
+  })
+exhibit4.save()
