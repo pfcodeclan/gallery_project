@@ -1,0 +1,24 @@
+<div class="artist">
+
+  <h2>Edit >>> <%= @artist.format_name_artist %></h2>
+
+  <form method="POST" action="/artists/<%= @artist.id %>">
+
+    <div class="form-wrapper">
+
+      <div class="form-el">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= @artist.name %>"/>
+        <label for="category">Category:</label>
+        <input type="text" name="category" id="category" value="<%= @artist.category %>"/>
+      </div>
+
+      <div class="form-el">
+        <input type="submit" value="Add Artist"/>
+      </div>
+
+    </div>
+
+</form>
+
+</div>

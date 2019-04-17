@@ -34,6 +34,21 @@ class Artist
     @id = results.first()['artist_id'].to_i
   end
 
+  def update()
+    sql = "UPDATE artists
+    SET
+    (
+      name,
+      category
+    ) =
+    (
+      $1, $2
+    )
+    WHERE id = $3"
+    values = [@name, @category, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.find(id)
     sql = "SELECT * FROM artists
     WHERE id = $1"

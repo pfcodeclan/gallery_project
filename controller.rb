@@ -31,7 +31,7 @@ end
 get '/artists/:id/edit' do
   @exhibits = Exhibit.all
   @artist = Artist.find(params['id'])
-  erb(:edit)
+  erb(:'artist/edit')
 end
 
 post '/artists/:id' do
@@ -71,7 +71,7 @@ end
 get '/exhibits/:id/edit' do
   @artists = Artist.all
   @exhibit = Exhibit.find(params['id'])
-  erb(:edit)
+  erb(:'exhibit/edit')
 end
 
 post '/exhibits/:id' do
