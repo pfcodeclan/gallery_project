@@ -1,5 +1,5 @@
 <div class="artist">
-<h2><%= @artist.format_name_artist %></h2>
+  <h2><%= @artist.format_name_artist %></h2>
 <p>Category: <%= @artist.name %></p>
 <a href="/artists/<%= @artist.id %>/edit">Edit</a>
 <form action="/artists/<%= @artist.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

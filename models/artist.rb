@@ -6,7 +6,8 @@ class Artist
   attr_reader(:name, :category, :id)
 
   def initialize(options)
-    @id = options['artist_id'].to_i if options['artist_id']
+    # @id = options['artist_id'].to_i if options['artist_id']
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @category = options['category']
   end
@@ -49,16 +50,27 @@ class Artist
 
   def self.delete_all
     sql = "DELETE FROM artists"
-    SqlRunner.run( sql )
+    SqlRunner.run(sql)
   end
 
   def format_name_artist
     return "#{@name.capitalize}"
   end
 
-  # def exhibit()
-  #     exhibit = Exhibit.find(@exhibit_id)
-  #     return exhibit
-  #   end
+  def self.map_items(artist_data)
+    return artist_data.map{|artist| Artist.new(artist)}
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM artists"
+    SqlRunner.run(sql)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM artists"
+    artist_data = SqlRunner.run(sql)
+    artists = map_items(artist_data)
+    return artists
+  end
 
 end

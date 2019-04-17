@@ -41,9 +41,23 @@ class Exhibit
     return Exhibit.new(results.first)
   end
 
+  def delete()
+    sql = "DELETE FROM exhibits WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def format_name_exhibit
+    return "#{@name.capitalize}"
+  end
+
+  def self.map_items(exhibit_data)
+    return exhibit_data.map{|exhibit| Exhibit.new(exhibit)}
+  end
+
   def self.delete_all
     sql = "DELETE FROM exhibits"
-    SqlRunner.run( sql )
+    SqlRunner.run(sql)
   end
 
   def self.all()
@@ -51,14 +65,6 @@ class Exhibit
     exhibit_data = SqlRunner.run(sql)
     exhibits = map_items(exhibit_data)
     return exhibits
-  end
-
-  def self.map_items(exhibit_data)
-    return exhibit_data.map{|exhibit| Exhibit.new(exhibit)}
-  end
-
-  def format_name_exhibit
-  return "#{@name.capitalize}"
   end
 
 end
