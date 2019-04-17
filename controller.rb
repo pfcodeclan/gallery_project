@@ -19,7 +19,7 @@ get '/artists_new' do
 end
 
 post '/artists' do
-  Student.new(params).save
+  Artist.new(params).save
   redirect to '/artists'
 end
 
