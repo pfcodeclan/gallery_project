@@ -1,12 +1,11 @@
 <h2>Edit >>> <%= @artist.format_name %></h2>
 
-<form method="POST" action="/artists/<%= @artist.id %>">
+<form method="POST" action="/artists<%= @artist.id %>">
   <div class="form-wrapper">
     <div class="form-el">
       <label for="name">Name:</label>
       <input type="text" name="name" id="name" value="<%= @artist.name %>"/>
     </div>
-
 
     <div class="form-el">
       <label for="exhibit_select">Goto Exhibit:</label>
@@ -21,17 +20,14 @@
       </select>
     </div>
 
-
     <div class="form-el">
       <label for="price">Price:</label>
       <input type="number" name="price" id="price" value="<%= @artist.price %>"/>
     </div>
 
-
     <div class="form-el">
       <input type="submit" value="Add Artist"/>
     </div>
-
   </div>
-
 </form>
+<!--  -->

@@ -11,6 +11,10 @@ get '/' do
   erb(:index)
 end
 
+# get '/artists/:id' do
+#   @artist = Artist.find(params['id'])
+#   erb(:show)
+# end
 
 get '/artists' do
   @artists = Artist.all
@@ -23,9 +27,14 @@ get '/artists_new' do
   erb(:new_artist)
 end
 
+# post '/artists' do
+#   Artist.new(params).save
+#   erb(:artists_list)
+# end
+
 post '/artists' do
-  Artist.new(params).save
-  erb(:artists_list)
+  Student.new(params).save
+  redirect to '/artists'
 end
 
 get '/artists/:id' do

@@ -1,15 +1,18 @@
+
 <div id="artist-wrapper">
   <% @artists.each do |artist| %>
-  <div class="artist">
-    <h3><a href="/artists/<%= artist.id %>"><%= artist.format_name %></a></h3>
-  </div>
-  <% end %>
+
+<div class="artist">
+
+  <h3>
+    <a href="/artists<%= artist.id %>">
+      <%= artist.format_name %>
+    </a>
+    </h3>
+
+  <p>Category: <%= artist.category %></p>
+
 </div>
 
-<!-- <form action="/artists/" method="POST" class="centered">
-  <label>name</label>
-  <input type="text" name="name" required/>
-  <label>artists</label>
-  <<input type="text" name="artist" required/>
-  <<input type="submit" value="create new artist">
-</form> -->
+  <% end %>
+</div>

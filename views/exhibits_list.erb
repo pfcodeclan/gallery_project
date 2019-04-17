@@ -1,7 +1,7 @@
 <div id="artist-wrapper">
   <% @exhibits.each do |exhibit| %>
   <div class="artist">
-    <h3><a href="/exhibits/<%= exhibit.id %>"><%= exhibit.format_name_exhibit %></a></h3>
+    <h3><a href="/exhibits<%= exhibit.id %>"><%= exhibit.format_name_exhibit %></a></h3>
   </div>
   <% end %>
 
