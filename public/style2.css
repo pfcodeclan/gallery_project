@@ -102,7 +102,7 @@ a:hover {
 .exhibit {
   display: flex;
   flex-flow: column;
-    align-content: center;
+  align-content: center;
   border: 5px double;
   margin: 0 35px 30px 0;
   padding: 25px;
@@ -140,7 +140,8 @@ header, footer, article, nav, aside {
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: flex-start;
 }
 img {
  margin: 5px;
@@ -150,6 +151,12 @@ img:hover {
  transform: scale (1.1);
 }
 
+/* Add a background color and some padding around the form */ */
+.container_contact {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
   width: 100%; /* Full width */
@@ -164,7 +171,7 @@ input[type=text], select, textarea {
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-  background-color: #4CAF50;
+  background-color: none;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -176,10 +183,3 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #red;
 }
-
-/* Add a background color and some padding around the form */
-/* .container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-} */

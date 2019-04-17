@@ -15,7 +15,6 @@ end
 
 get '/artists_new' do
   @artists = Artist.all
-  # erb(:new_artist)
   erb(:new)
 end
 
@@ -47,14 +46,11 @@ post '/artists/:id/delete' do
   redirect to '/artists'
 end
 
-
 # ----
-
 
 get '/exhibits' do
   @exhibits = Exhibit.all
   erb(:exhibits_list)
-  # erb(:index)
 end
 
 get '/exhibits/new' do
@@ -70,7 +66,7 @@ end
 get '/exhibits/:id' do
   @exhibit = Exhibit.find(params['id'])
   erb(:'exhibit/show_exhibit')
-ends
+end
 
 get '/exhibits/:id/edit' do
   @artists = Artist.all
@@ -97,11 +93,3 @@ end
 get '/contact' do
   erb(:contact)
 end
-
-# get '/manlogin' do
-#   erb(:manlogin)
-# end
-
-# get '/artists_new' do
-#   erb(:new_artist)
-# end
