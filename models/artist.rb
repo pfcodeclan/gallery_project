@@ -52,7 +52,7 @@ class Artist
     SqlRunner.run( sql )
   end
 
-  def format_name
+  def format_name_artist
     return "#{@name.capitalize}"
   end
 

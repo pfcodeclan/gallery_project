@@ -26,8 +26,7 @@ end
 
 get '/artists/:id' do
   @artist = Artist.find(params['id'])
-  # erb(:show_artist)
-  erb(:show)
+  erb(:'artist/show_artist')
 end
 
 get '/artists/:id/edit' do
@@ -70,8 +69,8 @@ end
 
 get '/exhibits/:id' do
   @exhibit = Exhibit.find(params['id'])
-  erb(:show_exhibit)
-end
+  erb(:'exhibit/show_exhibit')
+ends
 
 get '/exhibits/:id/edit' do
   @artists = Artist.all
