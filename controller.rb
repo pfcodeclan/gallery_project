@@ -1,36 +1,23 @@
 require('sinatra')
 require('sinatra/contrib/all')
-
 require_relative('models/artist')
 require_relative('models/exhibit')
 also_reload('./models/*')
 
-
 get '/' do
-  # @artists = Artist.all
   erb(:index)
 end
-
-# get '/artists/:id' do
-#   @artist = Artist.find(params['id'])
-#   erb(:show)
-# end
 
 get '/artists' do
   @artists = Artist.all
   erb(:artists_list)
 end
-# TODO /artists route rendering artist_list.erb
 
 get '/artists_new' do
   @artists = Artist.all
-  erb(:new_artist)
+  # erb(:new_artist)
+  erb(:new)
 end
-
-# post '/artists' do
-#   Artist.new(params).save
-#   erb(:artists_list)
-# end
 
 post '/artists' do
   Student.new(params).save
@@ -39,7 +26,8 @@ end
 
 get '/artists/:id' do
   @artist = Artist.find(params['id'])
-  erb(:show_artist)
+  # erb(:show_artist)
+  erb(:show)
 end
 
 get '/artists/:id/edit' do
@@ -103,7 +91,6 @@ post '/exhibits/:id/delete' do
   redirect to '/exhibits_list'
 end
 
-# TODO: about route rendering about.erb
 get '/about' do
   erb(:about)
 end
@@ -112,10 +99,10 @@ get '/contact' do
   erb(:contact)
 end
 
-get '/manlogin' do
-  erb(:manlogin)
-end
+# get '/manlogin' do
+#   erb(:manlogin)
+# end
 
-get '/artists_new' do
-  erb(:new_artist)
-end
+# get '/artists_new' do
+#   erb(:new_artist)
+# end

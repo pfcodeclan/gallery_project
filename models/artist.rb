@@ -57,8 +57,8 @@ class Artist
   end
 
   # def exhibit()
-  #   exhibit = Exhibit.find(@exhibit_id)
-  #   return exhibit
-  # end
+  #     exhibit = Exhibit.find(@exhibit_id)
+  #     return exhibit
+  #   end
 
 end

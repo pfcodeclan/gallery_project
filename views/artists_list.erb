@@ -1,18 +1,9 @@
-
 <div id="artist-wrapper">
   <% @artists.each do |artist| %>
 
 <div class="artist">
-
-  <h3>
-    <a href="/artists<%= artist.id %>">
-      <%= artist.format_name %>
-    </a>
-    </h3>
-
+  <h3><a href="/artists<%= artist.id %>"><%= artist.format_name %></a></h3>
   <p>Category: <%= artist.category %></p>
-
 </div>
-
   <% end %>
 </div>

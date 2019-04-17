@@ -1,11 +1,6 @@
-
 <h2><%= @exhibit.format_name %></h2>
 
-<p>Exhibit: <%= @exhibit.artist.name %></p>
-<!-- <p>Price: <%= @exhibit.price %></p> -->
+<p>Category: <%= @exhibit.artist.name %></p>
 
 <a href="/exhibits/<%= @exhibit.id %>/edit">Edit</a>
-
 <form action="/exhibits/<%= @exhibit.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
-
-<!--  -->
