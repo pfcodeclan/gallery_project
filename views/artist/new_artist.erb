@@ -1,18 +1,17 @@
-<div class="artist">
-<h1>This is the Add Artist Page</h1>
+<div class='artist'>
 
-<form action="/artists/:id" method="POST" class="centered">
+<h2>Add Artist</h2>
 
-  <label>name</label>
-  <input type="text" name="name" required/>
+<form method="POST" action="/artists">
+  <div class="form-wrapper">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name"/>
 
-  <label>category</label>
-  <<input type="text" name="category" required/>
+      <label for="category">Category:</label>
+      <input type="text" name="category" id="category"/>
 
-  <<input type="submit" value="create new artist">
-
+      <input type="submit" value="Add Artist"/>
+  </div>
 </form>
-</div>
 
-<!-- @name = options['name']
-@price = options['price'] -->
+</div>

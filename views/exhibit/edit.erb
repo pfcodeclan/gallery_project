@@ -1,21 +1,24 @@
-<h2>Edit >>> <%= @exhibit.format_name_exhibit %></h2>
+<div class="exhibit">
 
-<form method="POST" action="/exhibits/<%= @exhibit.id %>">
-  <div class="form-wrapper">
-    <div class="form-el">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" value="<%= @exhibit.name %>"/>
-      <label for="category">Category:</label>
-      <input type="text" name="category" id="category" value="<%= @exhibit.category %>"/>
+  <h2>Edit >>> <%= @exhibit.format_name_exhibit %></h2>
+
+  <form method="POST" action="/exhibits/<%= @exhibit.id %>">
+
+    <div class="form-wrapper">
+
+      <div class="form-el">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= @exhibit.name %>"/>
+        <label for="category">Category:</label>
+        <input type="text" name="category" id="category" value="<%= @exhibit.category %>"/>
+      </div>
+
+      <div class="form-el">
+        <input type="submit" value="Add Exhibit"/>
+      </div>
+
     </div>
 
-
-
-
-
-    <div class="form-el">
-      <input type="submit" value="Add Exhibit"/>
-    </div>
-  </div>
 </form>
-<!--  -->
+
+</div>
